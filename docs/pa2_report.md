@@ -67,5 +67,35 @@ Handling cases where the key is not provided by moving to the left-most child to
 Fetching pages from the buffer pool with appropriate permission levels (READ_ONLY for internal pages, specific permissions for leaf pages).
 Utilization of the `BTreeFile::getPage` wrapper function to track dirty pages.
 
+## Exercise 3: Splitting Pages
+
+`BTreeFile::splitLeafPage`
+The splitLeafPage method was implemented to handle the scenario where a leaf page becomes overfull upon insertion of a new tuple. We ensured that this method creates a new leaf page, redistributes the tuples evenly between the old and new pages, and updates the parent's keys accordingly. Attention was given to maintain the linked list property of the leaf pages for an ordered traversal.
+
+`BTreeFile::splitInternalPage`
+Similarly, the splitInternalPage method deals with the case where an internal page (a non-leaf node in the B-tree) exceeds its capacity. The implementation involves creating a new internal page and distributing the keys and children pointers between the two pages. It is critical to update the parent's pointers and, if necessary, to propagate the split upwards recursively.
+
+`BufferPool::insertTuple`
+The insertTuple function in the BufferPool class was enhanced to handle the addition of tuples to the database. It checks for the appropriate page in the buffer pool, inserts the tuple, and if the page is overfull, initiates a split. This method interacts closely with splitLeafPage or splitInternalPage, depending on whether a leaf or internal page needs splitting.
+
+`BufferPool::deleteTuple`
+Conversely, deleteTuple manages the removal of tuples from pages within the buffer pool. It ensures that the tuple is deleted and that the properties of the B-tree are not violated. If the operation results in underfull pages, it sets up the context for later redistribution or merging of pages.
+
+## Exercise 4: Redistributing Pages 
+
+`BTreeFile::stealFromLeafPage`
+This method is implemented to handle cases where a leaf page can avoid underflow by redistributing tuples from a neighboring leaf page. The method carefully shifts tuples from one page to another, updating the parent's keys to reflect the redistribution.
+
+`BTreeFile::stealFromLeftInternalPage` & `BTreeFile::stealFromRightInternalPage`
+Both of these methods aim to redistribute keys and pointers between internal pages to maintain the B-tree properties when a page might otherwise underflow. The redistribution can take place with either the left or the right sibling, necessitating separate methods for each case. The parent's references are updated to maintain the integrity of the tree structure.
+
+## Exercise 5: Merging Pages 
+
+`BTreeFile::mergeLeafPages`
+When redistribution is not possible, merging becomes necessary. mergeLeafPages combines two leaf pages into one, ensuring that all tuples are preserved and that the linked list property of the leaf pages is maintained. Parent references must be removed or updated to reflect the merge.
+
+`BTreeFile::mergeInternalPages`
+This method handles the merging of internal pages. Similar to merging leaf pages, keys and pointers are combined from two pages into one. This might require recursive changes up the tree since the height of the subtree may change as a result of the merge.
+
 
 
