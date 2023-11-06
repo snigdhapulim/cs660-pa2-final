@@ -1,0 +1,19 @@
+# CMake generated Testfile for 
+# Source directory: /Users/snigdhareddypulim/Downloads/209640697/tests/pa2
+# Build directory: /Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test([=[BufferpoolTest.evictPage]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BufferpoolTest.evictPage")
+set_tests_properties([=[BufferpoolTest.evictPage]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+add_test([=[BufferpoolTest.flushAllPages]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BufferpoolTest.flushAllPages")
+set_tests_properties([=[BufferpoolTest.flushAllPages]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+add_test([=[BufferpoolTest.discardPage]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BufferpoolTest.discardPage")
+set_tests_properties([=[BufferpoolTest.discardPage]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+add_test([=[BufferpoolTest.flushPage]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BufferpoolTest.flushPage")
+set_tests_properties([=[BufferpoolTest.flushPage]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+add_test([=[BufferpoolTest.flushPages]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BufferpoolTest.flushPages")
+set_tests_properties([=[BufferpoolTest.flushPages]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+add_test([=[BTreeFileTest.findLeafPage]=] "/Users/snigdhareddypulim/Downloads/209640697/cmake-build-debug/tests/pa2/pa2_test" "--gtest_filter=BTreeFileTest.findLeafPage")
+set_tests_properties([=[BTreeFileTest.findLeafPage]=] PROPERTIES  SKIP_REGULAR_EXPRESSION "\\[  SKIPPED \\]" TIMEOUT "5" _BACKTRACE_TRIPLES "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake;402;add_test;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;13;gtest_add_tests;/Users/snigdhareddypulim/Downloads/209640697/tests/pa2/CMakeLists.txt;0;")
+subdirs("../../_deps/googletest-build")
