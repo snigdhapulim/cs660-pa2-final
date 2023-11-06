@@ -1,10 +1,42 @@
 #include <db/BTreeFile.h>
+#include "db/BufferPool.h"
+#include "db/Database.h"
 
 using namespace db;
 
 BTreeLeafPage *BTreeFile::findLeafPage(TransactionId tid, PagesMap &dirtypages, BTreePageId *pid, Permissions perm,
                                        const Field *f) {
     // TODO pa2.2: implement
+    // BTreePage *currentPage = nullptr;
+    //  BTreeLeafPage *leafPage = nullptr;
+    //   BTreePageId *currentPageId=nullptr;
+
+    // Start at the root of the B+ tree and traverse the tree
+    //   while (true) {
+    //   currentPage = static_cast<BTreePage *>(getPage(tid, dirtypages, pid , Permissions::READ_ONLY));
+
+    // Check if we've reached a leaf page
+    //  if (pid->getType() == BTreePageType::LEAF) {
+    // Cast to BTreeLeafPage and return
+//    leafPage = static_cast<BTreeLeafPage *>(currentPage);
+    //   break;
+    //   }
+    //  BTreePageId *nextPid;
+
+
+    // Find the appropriate child page using the IndexPredicate
+    //   const IndexPredicate indexPredicate(Op::EQUALS, f);
+    //   BTreePageId *childPid = currentPage->(indexPredicate);
+
+    // Update the current page ID for the next iteration
+    //   pid = childPid;
+    //  }
+
+    // Add the dirty pages to the list of dirty pages
+//  dirtypages[pid] = leafPage;
+
+    // return leafPage;
+
     return nullptr;
 }
 

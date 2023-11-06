@@ -12,7 +12,9 @@ namespace db {
      */
     class Predicate {
         // TODO pa2.2: add private members
-
+        int fieldNum;
+        Op op;
+        const Field *operand;
         /** Constants used for return codes in Field.compare */
     public:
 
